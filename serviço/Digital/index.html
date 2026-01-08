@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="E-book gratuito para profissionais e pequenos negócios que querem organizar sua atuação digital de forma estratégica e sustentável">
+    <title>E-book Gratuito | Estruture Sua Presença Digital</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Estruture Sua Presença Digital com Mais Clareza e Consistência</h1>
+                <p class="hero-subtitle">Um e-book gratuito para profissionais e pequenos negócios que querem organizar sua atuação digital de forma estratégica e sustentável.</p>
+                <p class="hero-description">Este material apresenta conceitos fundamentais para quem precisa tomar decisões mais conscientes sobre presença online, comunicação digital e processos básicos — sem atalhos ou promessas irreais.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">O que você vai aprender</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"></div>
+                    <h3>Fundamentos Estratégicos</h3>
+                    <p>Entenda os pilares essenciais para estruturar uma presença digital alinhada aos seus objetivos de negócio.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"></div>
+                    <h3>Organização de Processos</h3>
+                    <p>Aprenda a evitar retrabalho, improviso e decisões desconectadas no ambiente digital.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"></div>
+                    <h3>Visão de Longo Prazo</h3>
+                    <p>Construa uma base que continue funcionando mesmo com mudanças de ferramentas ou tendências.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience Section -->
+    <section class="target-audience">
+        <div class="container">
+            <div class="target-content">
+                <h2 class="section-title">Para quem é este e-book</h2>
+                <ul class="target-list">
+                    <li>Profissionais autônomos</li>
+                    <li>Pequenos negócios e startups em fase inicial</li>
+                    <li>Pessoas responsáveis por comunicação ou presença digital</li>
+                    <li>Quem precisa estruturar o digital antes de investir em anúncios ou grandes soluções</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">Sobre o material</h2>
+                <p class="about-text">
+                    Este e-book foi desenvolvido como um guia introdutório para apoiar decisões mais bem fundamentadas no ambiente digital.
+                </p>
+                <p class="about-text">
+                    O foco está em clareza, organização e entendimento de processos, não em fórmulas prontas ou resultados instantâneos.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Form Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="form-title">Receba o e-book gratuitamente</h2>
+                <p class="form-subtitle">Preencha o formulário abaixo para receber o material diretamente no seu e-mail.</p>
+                
+                <form id="downloadForm" class="download-form">
+                    <div class="form-group">
+                        <label for="name">Nome completo *</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required 
+                            placeholder="Digite seu nome"
+                            aria-label="Nome completo"
+                        >
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail profissional *</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            placeholder="Digite seu e-mail"
+                            aria-label="E-mail profissional"
+                        >
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefone (opcional)</label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            placeholder="(00) 00000-0000"
+                            aria-label="Telefone"
+                        >
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+
+                    <button type="submit" class="cta-button" id="submitButton">
+                        <span class="button-text">Receber o e-book</span>
+                        <span class="button-loader" id="buttonLoader" style="display: none;"></span>
+                    </button>
+
+                    <div class="form-message" id="formMessage"></div>
+                </form>
+
+                <p class="form-footer">
+                    Seus dados serão utilizados apenas para o envio do material.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Codetria 2026 - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
