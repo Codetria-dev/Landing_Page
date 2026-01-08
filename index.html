@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Landing page moderna e responsiva com formulário de contato">
+    <title>Landing Page - Transforme Sua Ideia em Realidade</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header / Navegação -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <h2>CodeTria</h2>
+            </div>
+            <ul class="nav__menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero__content container">
+            <h1 class="hero__title">Transforme Sua Ideia em Realidade</h1>
+            <p class="hero__subtitle">
+                Soluções inovadoras para o seu negócio. Junte-se a milhares de empresas que já transformaram seus resultados.
+            </p>
+            <button class="btn btn--primary btn--cta" onclick="scrollToForm()">
+                Começar Agora
+            </button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="sobre" class="features">
+        <div class="container">
+            <h2 class="section__title">Por que escolher a gente?</h2>
+            <div class="features__grid">
+                <div class="feature__card">
+                    <div class="feature__icon">🚀</div>
+                    <h3>Rápido e Eficiente</h3>
+                    <p>Entregamos resultados em tempo recorde, sem comprometer a qualidade.</p>
+                </div>
+                <div class="feature__card">
+                    <div class="feature__icon">💡</div>
+                    <h3>Inovação Constante</h3>
+                    <p>Utilizamos as tecnologias mais modernas para criar soluções únicas.</p>
+                </div>
+                <div class="feature__card">
+                    <div class="feature__icon">🎯</div>
+                    <h3>Foco em Resultados</h3>
+                    <p>Nossa prioridade é o sucesso do seu negócio e a satisfação dos seus clientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta__title">Pronto para começar?</h2>
+            <p class="cta__text">Preencha o formulário abaixo e entraremos em contato em breve.</p>
+            <button class="btn btn--secondary btn--cta" onclick="scrollToForm()">
+                Falar com Especialista
+            </button>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2 class="section__title">Entre em Contato</h2>
+            <form id="contactForm" class="contact__form">
+                <!-- Nome -->
+                <div class="form__group">
+                    <label for="name" class="form__label">Nome Completo *</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        class="form__input" 
+                        placeholder="Seu nome completo"
+                        required
+                    >
+                    <span class="form__error" id="nameError"></span>
+                </div>
+
+                <!-- Email -->
+                <div class="form__group">
+                    <label for="email" class="form__label">E-mail *</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form__input" 
+                        placeholder="seu@email.com"
+                        required
+                    >
+                    <span class="form__error" id="emailError"></span>
+                </div>
+
+                <!-- Telefone -->
+                <div class="form__group">
+                    <label for="phone" class="form__label">Telefone *</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        class="form__input" 
+                        placeholder="(00) 00000-0000"
+                        required
+                    >
+                    <span class="form__error" id="phoneError"></span>
+                </div>
+
+                <!-- Mensagem -->
+                <div class="form__group">
+                    <label for="message" class="form__label">Mensagem *</label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        class="form__input form__textarea" 
+                        rows="5"
+                        placeholder="Conte-nos sobre seu projeto..."
+                        required
+                    ></textarea>
+                    <span class="form__error" id="messageError"></span>
+                </div>
+
+                <!-- Mensagens de Feedback -->
+                <div id="formFeedback" class="form__feedback"></div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn--primary btn--submit">
+                    <span id="submitText">Enviar Mensagem</span>
+                    <span id="submitLoader" class="loader" style="display: none;"></span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 CodeTria. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
