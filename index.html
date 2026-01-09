@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Padaria artesanal com receitas tradicionais. Pães frescos, doces caseiros e sabores que atravessam gerações.">
+    <title>Padoca da Nona - Pães que Respeitam o Tempo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header / Navegação -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <h1>Padoca da Nona</h1>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#historia" class="nav-link">A Padoca</a></li>
+                <li><a href="#tradicional" class="nav-link">Sobre</a></li>
+                <li><a href="#produtos" class="nav-link">Produtos</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content container">
+            <h2 class="hero-title">Pães que respeitam o tempo</h2>
+            <p class="hero-subtitle">Sabores que atravessam gerações</p>
+        </div>
+        <div class="hero-cta">
+            <a href="#contato" class="btn btn-primary">Faça seu pedido</a>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="historia" class="sobre section">
+        <div class="container">
+            <h2 class="section-title">Nossa História</h2>
+            <div class="sobre-text">
+                <p>A Padoca da Nona nasceu da cozinha de casa, das receitas passadas de mão em mão e do costume de acordar cedo para cuidar da massa como quem cuida da família.</p>
+                <p>Há mais de 10 anos, servimos nossos clientes com pães frescos, doces feitos à mão com receitas próprias saídas direto dos cadernos de receita da Nona. Usando os mesmos ingredientes e técnicas de preparo.</p>
+                <p>Produzimos todos os dias para que cada cliente leve para casa mais do que pão. Daqui você leva história, aconchego e sabor de verdade.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="tradicional" class="features section">
+        <div class="container">
+            <h2 class="section-title">Nosso Jeito Tradicional de Fazer</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon"></div>
+                    <h3>Ingredientes Simples e Naturais</h3>
+                    <p>Selecionamos farinhas, ovos e fermentos de qualidade, sem atalhos e sem excessos.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"></div>
+                    <h3>Produção Artesanal com fermentação natural</h3>
+                    <p>Cada pão é moldado à mão, seguindo receitas tradicionais da família.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"></div>
+                    <h3>Fresco Todos os Dias</h3>
+                    <p>Começamos antes do amanhecer para garantir fornadas quentinhas pela manhã.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos Section -->
+    <section id="produtos" class="produtos section">
+        <div class="container">
+            <h2 class="section-title">Nossos Produtos</h2>
+            <div class="produtos-grid">
+                <div class="produto-card">
+                    <div class="produto-icon produto-pao"></div>
+                    <h3>Pães Artesanais</h3>
+                    <p>Pão francês, pão de leite, pão doce, pão caseiro e receitas sazonais feitas diariamente.</p>
+                </div>
+                <div class="produto-card">
+                    <div class="produto-icon produto-doce"></div>
+                    <h3>Doces Caseiros</h3>
+                    <p>Bolos simples, tortas tradicionais, sobremesas feitas como em casa.</p>
+                </div>
+                <div class="produto-card">
+                    <div class="produto-icon produto-salgado"></div>
+                    <h3>Salgados</h3>
+                    <p>Coxinhas, empadas, pastéis e salgados assados, preparados no dia.</p>
+                </div>
+                <div class="produto-card">
+                    <div class="produto-icon produto-cafe"></div>
+                    <h3>Café</h3>
+                    <p>Café coado na hora e bebidas quentes para acompanhar o pão recém-saído do forno.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato / Formulário Section -->
+    <section id="contato" class="contato section">
+        <div class="container">
+            <h2 class="section-title">Fale com a Padoca</h2>
+            <p class="section-subtitle">Faça seu pedido, consulte disponibilidade ou tire suas dúvidas.<br>Estamos a disposição para atender você.</p>
+            
+            <form id="contatoForm" class="form">
+                <div class="form-group">
+                    <label for="nome">Nome completo *</label>
+                    <input 
+                        type="text" 
+                        id="nome" 
+                        name="nome" 
+                        required 
+                        placeholder="Seu nome"
+                    >
+                    <span class="error-message" id="nomeError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone">Telefone *</label>
+                    <input 
+                        type="tel" 
+                        id="telefone" 
+                        name="telefone" 
+                        required 
+                        placeholder="(00) 00000-0000"
+                    >
+                    <span class="error-message" id="telefoneError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail *</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        placeholder="seu@email.com"
+                    >
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem ou pedido *</label>
+                    <textarea 
+                        id="mensagem" 
+                        name="mensagem" 
+                        required 
+                        rows="5" 
+                        placeholder="Conte-nos o que você precisa ou faça seu pedido aqui..."
+                    ></textarea>
+                    <span class="error-message" id="mensagemError"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit">
+                    <span class="btn-text">Enviar mensagem</span>
+                    <span class="btn-loading" id="btnLoading">Enviando...</span>
+                </button>
+            </form>
+
+            <!-- Mensagens de Feedback -->
+            <div id="successMessage" class="message message-success" style="display: none;">
+                <span class="message-icon message-check"></span>
+                <p>Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
+            </div>
+
+            <div id="errorMessage" class="message message-error" style="display: none;">
+                <span class="message-icon message-x"></span>
+                <p>Ops! Algo deu errado. Tente novamente ou entre em contato pelo telefone.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h3 class="footer-title">Onde Estamos</h3>
+            <p>Rua Exemplo, 123 — Bairro Centro</p>
+            <p>Telefone: (00) 0000-0000</p>
+            <p class="footer-copyright">&copy; Codetria. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
