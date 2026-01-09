@@ -1,0 +1,18 @@
+{
+  "name": "landing-page-ebook",
+  "version": "1.0.0",
+  "description": "Landing page moderna para captura de leads e download de e-book",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3001 -o",
+    "dev": "npx http-server . -p 3001 -o",
+    "serve": "npx http-server . -p 8080"
+  },
+  "keywords": [
+    "landing-page",
+    "ebook",
+    "lead-capture"
+  ],
+  "author": "",
+  "license": "MIT"
+}
