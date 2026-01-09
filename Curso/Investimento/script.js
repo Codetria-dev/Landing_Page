@@ -262,9 +262,9 @@ async function submitForm(formData) {
     }
 
     try {
-        // URL do endpoint - SUBSTITUA pela sua URL real
+        // Endpoint de produção deve ser configurado antes do deploy
         // Para desenvolvimento, você pode usar um serviço como https://formspree.io ou criar seu próprio endpoint
-        const endpoint = 'https://formspree.io/f/YOUR_FORM_ID'; // SUBSTITUA pelo seu endpoint
+        const endpoint = 'https://formspree.io/f/YOUR_FORM_ID'; // SUBSTITUA pelo seu endpoint real
         
         const response = await fetch(endpoint, {
             method: 'POST',
