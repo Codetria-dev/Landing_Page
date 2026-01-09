@@ -1,0 +1,23 @@
+{
+  "name": "landing-page-curso-investimento",
+  "version": "1.0.0",
+  "description": "Landing page moderna e responsiva para curso online de investimentos",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 8000 -o",
+    "dev": "npx http-server . -p 8000 -o",
+    "serve": "npx http-server . -p 8000"
+  },
+  "keywords": [
+    "landing-page",
+    "curso",
+    "investimento",
+    "html",
+    "css",
+    "javascript",
+    "responsive",
+    "formulario"
+  ],
+  "author": "Codetria",
+  "license": "MIT"
+}
