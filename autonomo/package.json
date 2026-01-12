@@ -1,0 +1,13 @@
+{
+  "name": "autonomo",
+  "version": "1.0.0",
+  "description": "Landing page project",
+  "scripts": {
+    "start": "cd escritor && npm start",
+    "dev": "cd escritor && npm run dev",
+    "serve": "cd escritor && npm run serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
