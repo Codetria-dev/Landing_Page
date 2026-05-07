@@ -6,6 +6,231 @@
  */
 
 // ============================================
+// SISTEMA DE TRADUÇÃO EN / PT
+// ============================================
+
+const translations = {
+    pt: {
+        // Nav
+        nav_home: 'Início',
+        nav_about: 'Sobre o Curso',
+        nav_content: 'Conteúdo',
+        nav_enroll: 'Inscreva-se',
+        // Hero
+        hero_title: 'Aprenda a investir e construa seu patrimônio com consistência',
+        hero_subtitle: 'O Investe Vida é um curso prático para quem quer começar a investir mesmo com pouco dinheiro, entender como o mercado funciona e tomar decisões conscientes desde o primeiro passo.',
+        hero_cta: 'Quero começar agora',
+        // About
+        about_title: 'Por que escolher o Investe Vida',
+        about_text_1: 'O Investe Vida foi criado para quem está começando do zero e quer aprender a investir com segurança e clareza.',
+        about_text_2: 'Sem linguagem complicada.\nSem promessas irreais.\nSem necessidade de grandes valores para iniciar.',
+        about_text_3: 'Aqui você aprende o que realmente importa para construir patrimônio de forma consistente ao longo do tempo.',
+        // Highlight
+        highlight_text: 'Aqui, investir não é sobre sorte ou fórmulas milagrosas.\nÉ sobre método, disciplina e tempo.',
+        highlight_cta: 'Começar agora',
+        // Proof
+        proof_label_students: 'Alunos',
+        proof_label_approval: 'Aprovação',
+        proof_label_online: 'Online',
+        proof_text: 'Mais de 5.000 alunos já deram o primeiro passo rumo a uma vida financeira mais organizada e consciente.',
+        // Features
+        features_title: 'O que torna este curso diferente',
+        feature_1_title: 'Conteúdo essencial e descomplicado',
+        feature_1_desc: 'Você aprende desde os fundamentos até estratégias práticas, entendendo o "porquê" de cada decisão.',
+        feature_2_title: 'Comece com pouco dinheiro',
+        feature_2_desc: 'Mostramos como iniciar seus investimentos respeitando sua realidade financeira atual.',
+        feature_3_title: 'Foco no longo prazo',
+        feature_3_desc: 'Nada de atalhos perigosos. O objetivo é construir patrimônio com segurança e constância.',
+        feature_4_title: 'Didática clara e prática',
+        feature_4_desc: 'Explicações simples, exemplos reais e exercícios para aplicar imediatamente.',
+        feature_5_title: 'Professores com experiência real',
+        feature_5_desc: 'Instrutores que atuam no mercado e ensinam com base em prática, não em promessas.',
+        feature_6_title: 'Acesso vitalício ao conteúdo',
+        feature_6_desc: 'Estude no seu ritmo, revise quando quiser e acompanhe sua evolução ao longo do tempo.',
+        // Content
+        content_title: 'O que você vai aprender',
+        content_1_title: 'Fundamentos dos investimentos',
+        content_1_desc: 'Entenda como funciona o mercado financeiro, seus conceitos principais e os tipos de investimento disponíveis.',
+        content_2_title: 'Planejamento financeiro pessoal',
+        content_2_desc: 'Aprenda a organizar suas finanças, definir metas claras e criar uma base sólida antes de investir.',
+        content_3_title: 'Renda fixa e renda variável',
+        content_3_desc: 'Conheça as principais opções, seus riscos e quando cada uma faz sentido para seus objetivos.',
+        content_4_title: 'Gestão de risco e diversificação',
+        content_4_desc: 'Aprenda a proteger seu dinheiro e montar uma carteira equilibrada, adequada ao seu perfil.',
+        content_5_title: 'Estratégias para iniciantes',
+        content_5_desc: 'Estratégias simples, realistas e aplicáveis desde o início da sua jornada como investidor.',
+        content_6_title: 'Materiais de apoio',
+        content_6_desc: 'Planilhas, calculadoras e ferramentas para acompanhar seus investimentos com mais clareza.',
+        // Objections
+        objections_title: 'Dúvidas comuns antes de começar',
+        objection_1_q: '"Preciso ter muito dinheiro para começar?"',
+        objection_1_a: '→ Não. O curso ensina como iniciar com valores acessíveis.',
+        objection_2_q: '"Preciso entender de mercado financeiro?"',
+        objection_2_a: '→ Não. O conteúdo foi pensado para quem está começando do zero.',
+        objection_3_q: '"É muito técnico?"',
+        objection_3_a: '→ Não. A linguagem é simples, direta e focada na prática.',
+        // CTA
+        cta_title: 'Comece hoje mesmo',
+        cta_text_1: 'Você não precisa ser especialista para começar.\nPrecisa apenas dar o primeiro passo da forma certa.',
+        cta_text_2: 'Comece hoje a construir uma relação mais consciente com o seu dinheiro e dê início à formação do seu patrimônio.',
+        cta_cta: 'Garantir minha vaga',
+        // Form
+        form_title: 'Inscreva-se agora',
+        form_description: 'Preencha o formulário abaixo e receba todas as informações do curso diretamente no seu e-mail.',
+        form_label_name: 'Nome Completo *',
+        form_placeholder_name: 'Seu nome completo',
+        form_label_email: 'E-mail *',
+        form_placeholder_email: 'seu@email.com',
+        form_label_phone: 'Telefone *',
+        form_placeholder_phone: '(00) 00000-0000',
+        form_label_message: 'Por que você quer aprender a investir? (Opcional)',
+        form_placeholder_message: 'Conte-nos sobre seus objetivos...',
+        form_submit: 'Confirmar inscrição',
+        form_privacy: 'Seus dados estão seguros. Não enviamos spam.',
+        // Form validation errors
+        form_error_name_required: 'Nome é obrigatório',
+        form_error_name_min: 'Nome deve ter pelo menos 3 caracteres',
+        form_error_email_required: 'E-mail é obrigatório',
+        form_error_email_invalid: 'E-mail inválido',
+        form_error_phone_required: 'Telefone é obrigatório',
+        form_error_phone_invalid: 'Telefone inválido. Use o formato: (00) 00000-0000',
+        form_feedback_success: 'Inscrição realizada com sucesso! Em breve você receberá um e-mail com mais informações.',
+        form_feedback_error_submit: 'Ops! Ocorreu um erro ao processar sua inscrição. Por favor, tente novamente ou entre em contato conosco diretamente.',
+        form_feedback_error_validation: 'Por favor, corrija os erros no formulário antes de enviar.',
+        // Footer
+        footer_title: 'Investe Vida — Curso Online de Investimentos',
+        footer_credits: 'Desenvolvido por Codetria — Soluções Digitais & Desenvolvimento Web',
+        footer_legal: 'Ao se inscrever, você concorda com o uso dos seus dados conforme nossa política de privacidade.'
+    },
+    en: {
+        // Nav
+        nav_home: 'Home',
+        nav_about: 'About the Course',
+        nav_content: 'Content',
+        nav_enroll: 'Enroll',
+        // Hero
+        hero_title: 'Learn to invest and build your wealth consistently',
+        hero_subtitle: 'Investe Vida is a practical course for those who want to start investing even with little money, understand how the market works, and make conscious decisions from the very first step.',
+        hero_cta: 'I want to start now',
+        // About
+        about_title: 'Why choose Investe Vida',
+        about_text_1: 'Investe Vida was created for those starting from scratch who want to learn to invest safely and clearly.',
+        about_text_2: 'No complicated language.\nNo unrealistic promises.\nNo need for large amounts to start.',
+        about_text_3: 'Here you learn what really matters to build wealth consistently over time.',
+        // Highlight
+        highlight_text: 'Here, investing is not about luck or miracle formulas.\nIt\'s about method, discipline, and time.',
+        highlight_cta: 'Start now',
+        // Proof
+        proof_label_students: 'Students',
+        proof_label_approval: 'Approval',
+        proof_label_online: 'Online',
+        proof_text: 'Over 5,000 students have already taken the first step toward a more organized and conscious financial life.',
+        // Features
+        features_title: 'What makes this course different',
+        feature_1_title: 'Essential and straightforward content',
+        feature_1_desc: 'You learn from the fundamentals to practical strategies, understanding the "why" behind each decision.',
+        feature_2_title: 'Start with little money',
+        feature_2_desc: 'We show you how to start investing while respecting your current financial reality.',
+        feature_3_title: 'Long-term focus',
+        feature_3_desc: 'No dangerous shortcuts. The goal is to build wealth safely and consistently.',
+        feature_4_title: 'Clear and practical teaching',
+        feature_4_desc: 'Simple explanations, real examples, and exercises to apply immediately.',
+        feature_5_title: 'Teachers with real experience',
+        feature_5_desc: 'Instructors who work in the market and teach based on practice, not promises.',
+        feature_6_title: 'Lifetime access to content',
+        feature_6_desc: 'Study at your own pace, review whenever you want, and track your progress over time.',
+        // Content
+        content_title: 'What you will learn',
+        content_1_title: 'Investment fundamentals',
+        content_1_desc: 'Understand how the financial market works, its main concepts, and the types of investments available.',
+        content_2_title: 'Personal financial planning',
+        content_2_desc: 'Learn to organize your finances, set clear goals, and create a solid foundation before investing.',
+        content_3_title: 'Fixed income and variable income',
+        content_3_desc: 'Get to know the main options, their risks, and when each makes sense for your goals.',
+        content_4_title: 'Risk management and diversification',
+        content_4_desc: 'Learn to protect your money and build a balanced portfolio suited to your profile.',
+        content_5_title: 'Strategies for beginners',
+        content_5_desc: 'Simple, realistic strategies you can apply from the start of your investment journey.',
+        content_6_title: 'Support materials',
+        content_6_desc: 'Spreadsheets, calculators, and tools to track your investments with more clarity.',
+        // Objections
+        objections_title: 'Common questions before starting',
+        objection_1_q: '"Do I need a lot of money to start?"',
+        objection_1_a: '→ No. The course teaches you how to start with affordable amounts.',
+        objection_2_q: '"Do I need to understand the financial market?"',
+        objection_2_a: '→ No. The content is designed for those starting from scratch.',
+        objection_3_q: '"Is it too technical?"',
+        objection_3_a: '→ No. The language is simple, direct, and focused on practice.',
+        // CTA
+        cta_title: 'Start today',
+        cta_text_1: 'You don\'t need to be an expert to start.\nYou just need to take the first step the right way.',
+        cta_text_2: 'Start today building a more conscious relationship with your money and begin forming your wealth.',
+        cta_cta: 'Secure my spot',
+        // Form
+        form_title: 'Enroll now',
+        form_description: 'Fill out the form below and receive all course information directly in your email.',
+        form_label_name: 'Full Name *',
+        form_placeholder_name: 'Your full name',
+        form_label_email: 'Email *',
+        form_placeholder_email: 'your@email.com',
+        form_label_phone: 'Phone *',
+        form_placeholder_phone: '(00) 00000-0000',
+        form_label_message: 'Why do you want to learn to invest? (Optional)',
+        form_placeholder_message: 'Tell us about your goals...',
+        form_submit: 'Confirm enrollment',
+        form_privacy: 'Your data is safe. We don\'t send spam.',
+        // Form validation errors
+        form_error_name_required: 'Name is required',
+        form_error_name_min: 'Name must be at least 3 characters',
+        form_error_email_required: 'Email is required',
+        form_error_email_invalid: 'Invalid email',
+        form_error_phone_required: 'Phone is required',
+        form_error_phone_invalid: 'Invalid phone. Use format: (00) 00000-0000',
+        form_feedback_success: 'Registration successful! You will soon receive an email with more information.',
+        form_feedback_error_submit: 'Oops! An error occurred processing your registration. Please try again or contact us directly.',
+        form_feedback_error_validation: 'Please correct the errors in the form before submitting.',
+        // Footer
+        footer_title: 'Investe Vida — Online Investment Course',
+        footer_credits: 'Developed by Codetria — Digital Solutions & Web Development',
+        footer_legal: 'By signing up, you agree to the use of your data according to our privacy policy.'
+    }
+};
+
+let currentLang = localStorage.getItem('investeLang') || 'pt';
+
+function t(key) {
+    return translations[currentLang] && translations[currentLang][key] !== undefined
+        ? translations[currentLang][key]
+        : (translations['pt'][key] || key);
+}
+
+function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('investeLang', lang);
+
+    // Update all data-i18n text elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        el.textContent = t(key);
+    });
+
+    // Update all data-i18n-placeholder elements
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        el.placeholder = t(key);
+    });
+
+    // Update toggle button text
+    const toggle = document.getElementById('langToggle');
+    if (toggle) {
+        toggle.textContent = lang.toUpperCase();
+    }
+
+    // Update html lang attribute
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+}
+
+// ============================================
 // MENU MOBILE TOGGLE
 // ============================================
 document.addEventListener('DOMContentLoaded', function() {
@@ -23,6 +248,18 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', function() {
                 navMenu.classList.remove('active');
             });
+        });
+    }
+
+    // Inicializa o idioma salvo
+    setLanguage(currentLang);
+
+    // Toggle de idioma
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) {
+        langToggle.addEventListener('click', function() {
+            const newLang = currentLang === 'pt' ? 'en' : 'pt';
+            setLanguage(newLang);
         });
     }
 });
@@ -108,30 +345,30 @@ function validateField(fieldId, value, fieldType) {
         case 'name':
             if (!value.trim()) {
                 isValid = false;
-                errorMessage = 'Nome é obrigatório';
+                errorMessage = t('form_error_name_required');
             } else if (value.trim().length < 3) {
                 isValid = false;
-                errorMessage = 'Nome deve ter pelo menos 3 caracteres';
+                errorMessage = t('form_error_name_min');
             }
             break;
 
         case 'email':
             if (!value.trim()) {
                 isValid = false;
-                errorMessage = 'E-mail é obrigatório';
+                errorMessage = t('form_error_email_required');
             } else if (!validateEmail(value.trim())) {
                 isValid = false;
-                errorMessage = 'E-mail inválido';
+                errorMessage = t('form_error_email_invalid');
             }
             break;
 
         case 'phone':
             if (!value.trim()) {
                 isValid = false;
-                errorMessage = 'Telefone é obrigatório';
+                errorMessage = t('form_error_phone_required');
             } else if (!validatePhone(value.trim())) {
                 isValid = false;
-                errorMessage = 'Telefone inválido. Use o formato: (00) 00000-0000';
+                errorMessage = t('form_error_phone_invalid');
             }
             break;
 
@@ -293,7 +530,7 @@ async function submitForm(formData) {
 
         if (response.ok) {
             // Sucesso
-            showFeedback('Inscrição realizada com sucesso! Em breve você receberá um e-mail com mais informações.', 'success');
+            showFeedback(t('form_feedback_success'), 'success');
             resetForm();
         } else {
             // Erro do servidor
@@ -317,7 +554,7 @@ async function submitForm(formData) {
 
         // Mostra mensagem de erro amigável
         showFeedback(
-            'Ops! Ocorreu um erro ao processar sua inscrição. Por favor, tente novamente ou entre em contato conosco diretamente.',
+            t('form_feedback_error_submit'),
             'error'
         );
     }
@@ -338,7 +575,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Valida formulário
             if (!validateForm(formData)) {
-                showFeedback('Por favor, corrija os erros no formulário antes de enviar.', 'error');
+                showFeedback(t('form_feedback_error_validation'), 'error');
                 return;
             }
 

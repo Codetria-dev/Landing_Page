@@ -18,11 +18,14 @@
                 <h2>Investe Vida</h2>
             </div>
             <ul class="nav__menu">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#diferentes">Sobre o Curso</a></li>
-                <li><a href="#conteudo">Conteúdo</a></li>
-                <li><a href="#inscricao">Inscreva-se</a></li>
+                <li><a href="#inicio" data-i18n="nav_home">Início</a></li>
+                <li><a href="#diferentes" data-i18n="nav_about">Sobre o Curso</a></li>
+                <li><a href="#conteudo" data-i18n="nav_content">Conteúdo</a></li>
+                <li><a href="#inscricao" data-i18n="nav_enroll">Inscreva-se</a></li>
             </ul>
+            <div class="nav__lang">
+                <button class="lang__toggle" id="langToggle" aria-label="Switch language">EN</button>
+            </div>
             <button class="nav__toggle" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -34,11 +37,11 @@
     <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="hero__content container">
-            <h1 class="hero__title">Aprenda a investir e construa seu patrimônio com consistência</h1>
-            <p class="hero__subtitle">
+            <h1 class="hero__title" data-i18n="hero_title">Aprenda a investir e construa seu patrimônio com consistência</h1>
+            <p class="hero__subtitle" data-i18n="hero_subtitle">
                 O Investe Vida é um curso prático para quem quer começar a investir mesmo com pouco dinheiro, entender como o mercado funciona e tomar decisões conscientes desde o primeiro passo.
             </p>
-            <button class="btn btn--primary btn--cta" onclick="scrollToForm()">
+            <button class="btn btn--primary btn--cta" onclick="scrollToForm()" data-i18n="hero_cta">
                 Quero começar agora
             </button>
         </div>
@@ -47,17 +50,17 @@
     <!-- Por que escolher Section -->
     <section id="sobre" class="about">
         <div class="container">
-            <h2 class="section__title">Por que escolher o Investe Vida</h2>
+            <h2 class="section__title" data-i18n="about_title">Por que escolher o Investe Vida</h2>
             <div class="about__content">
-                <p class="about__text">
+                <p class="about__text" data-i18n="about_text_1">
                     O Investe Vida foi criado para quem está começando do zero e quer aprender a investir com segurança e clareza.
                 </p>
-                <p class="about__text about__text--highlight">
+                <p class="about__text about__text--highlight" data-i18n="about_text_2">
                     Sem linguagem complicada.<br>
                     Sem promessas irreais.<br>
                     Sem necessidade de grandes valores para iniciar.
                 </p>
-                <p class="about__text">
+                <p class="about__text" data-i18n="about_text_3">
                     Aqui você aprende o que realmente importa para construir patrimônio de forma consistente ao longo do tempo.
                 </p>
             </div>
@@ -67,11 +70,11 @@
     <!-- Destaque Section -->
     <section class="highlight">
         <div class="container">
-            <p class="highlight__text">
+            <p class="highlight__text" data-i18n="highlight_text">
                 Aqui, investir não é sobre sorte ou fórmulas milagrosas.<br>
                 É sobre método, disciplina e tempo.
             </p>
-            <button class="btn btn--primary btn--cta" onclick="scrollToForm()">
+            <button class="btn btn--primary btn--cta" onclick="scrollToForm()" data-i18n="highlight_cta">
                 Começar agora
             </button>
         </div>
@@ -83,49 +86,49 @@
             <div class="proof__stats">
                 <div class="stat">
                     <span class="stat__number">5.000+</span>
-                    <span class="stat__label">Alunos</span>
+                    <span class="stat__label" data-i18n="proof_label_students">Alunos</span>
                 </div>
                 <div class="stat">
                     <span class="stat__number">98%</span>
-                    <span class="stat__label">Aprovação</span>
+                    <span class="stat__label" data-i18n="proof_label_approval">Aprovação</span>
                 </div>
                 <div class="stat">
                     <span class="stat__number">100%</span>
-                    <span class="stat__label">Online</span>
+                    <span class="stat__label" data-i18n="proof_label_online">Online</span>
                 </div>
             </div>
-            <p class="proof__text">Mais de 5.000 alunos já deram o primeiro passo rumo a uma vida financeira mais organizada e consciente.</p>
+            <p class="proof__text" data-i18n="proof_text">Mais de 5.000 alunos já deram o primeiro passo rumo a uma vida financeira mais organizada e consciente.</p>
         </div>
     </section>
 
     <!-- Diferenciais Section -->
     <section id="diferentes" class="features-section">
         <div class="container">
-            <h2 class="section__title">O que torna este curso diferente</h2>
+            <h2 class="section__title" data-i18n="features_title">O que torna este curso diferente</h2>
             <div class="features__grid">
                 <div class="feature__card">
-                    <h3>Conteúdo essencial e descomplicado</h3>
-                    <p>Você aprende desde os fundamentos até estratégias práticas, entendendo o "porquê" de cada decisão.</p>
+                    <h3 data-i18n="feature_1_title">Conteúdo essencial e descomplicado</h3>
+                    <p data-i18n="feature_1_desc">Você aprende desde os fundamentos até estratégias práticas, entendendo o "porquê" de cada decisão.</p>
                 </div>
                 <div class="feature__card">
-                    <h3>Comece com pouco dinheiro</h3>
-                    <p>Mostramos como iniciar seus investimentos respeitando sua realidade financeira atual.</p>
+                    <h3 data-i18n="feature_2_title">Comece com pouco dinheiro</h3>
+                    <p data-i18n="feature_2_desc">Mostramos como iniciar seus investimentos respeitando sua realidade financeira atual.</p>
                 </div>
                 <div class="feature__card">
-                    <h3>Foco no longo prazo</h3>
-                    <p>Nada de atalhos perigosos. O objetivo é construir patrimônio com segurança e constância.</p>
+                    <h3 data-i18n="feature_3_title">Foco no longo prazo</h3>
+                    <p data-i18n="feature_3_desc">Nada de atalhos perigosos. O objetivo é construir patrimônio com segurança e constância.</p>
                 </div>
                 <div class="feature__card">
-                    <h3>Didática clara e prática</h3>
-                    <p>Explicações simples, exemplos reais e exercícios para aplicar imediatamente.</p>
+                    <h3 data-i18n="feature_4_title">Didática clara e prática</h3>
+                    <p data-i18n="feature_4_desc">Explicações simples, exemplos reais e exercícios para aplicar imediatamente.</p>
                 </div>
                 <div class="feature__card">
-                    <h3>Professores com experiência real</h3>
-                    <p>Instrutores que atuam no mercado e ensinam com base em prática, não em promessas.</p>
+                    <h3 data-i18n="feature_5_title">Professores com experiência real</h3>
+                    <p data-i18n="feature_5_desc">Instrutores que atuam no mercado e ensinam com base em prática, não em promessas.</p>
                 </div>
                 <div class="feature__card">
-                    <h3>Acesso vitalício ao conteúdo</h3>
-                    <p>Estude no seu ritmo, revise quando quiser e acompanhe sua evolução ao longo do tempo.</p>
+                    <h3 data-i18n="feature_6_title">Acesso vitalício ao conteúdo</h3>
+                    <p data-i18n="feature_6_desc">Estude no seu ritmo, revise quando quiser e acompanhe sua evolução ao longo do tempo.</p>
                 </div>
             </div>
         </div>
@@ -134,48 +137,48 @@
     <!-- Conteúdo do Curso Section -->
     <section id="conteudo" class="content">
         <div class="container">
-            <h2 class="section__title">O que você vai aprender</h2>
+            <h2 class="section__title" data-i18n="content_title">O que você vai aprender</h2>
             <div class="content__list">
                 <div class="content__item">
                     <span class="content__number">01</span>
                     <div class="content__text">
-                        <h3>Fundamentos dos investimentos</h3>
-                        <p>Entenda como funciona o mercado financeiro, seus conceitos principais e os tipos de investimento disponíveis.</p>
+                        <h3 data-i18n="content_1_title">Fundamentos dos investimentos</h3>
+                        <p data-i18n="content_1_desc">Entenda como funciona o mercado financeiro, seus conceitos principais e os tipos de investimento disponíveis.</p>
                     </div>
                 </div>
                 <div class="content__item">
                     <span class="content__number">02</span>
                     <div class="content__text">
-                        <h3>Planejamento financeiro pessoal</h3>
-                        <p>Aprenda a organizar suas finanças, definir metas claras e criar uma base sólida antes de investir.</p>
+                        <h3 data-i18n="content_2_title">Planejamento financeiro pessoal</h3>
+                        <p data-i18n="content_2_desc">Aprenda a organizar suas finanças, definir metas claras e criar uma base sólida antes de investir.</p>
                     </div>
                 </div>
                 <div class="content__item">
                     <span class="content__number">03</span>
                     <div class="content__text">
-                        <h3>Renda fixa e renda variável</h3>
-                        <p>Conheça as principais opções, seus riscos e quando cada uma faz sentido para seus objetivos.</p>
+                        <h3 data-i18n="content_3_title">Renda fixa e renda variável</h3>
+                        <p data-i18n="content_3_desc">Conheça as principais opções, seus riscos e quando cada uma faz sentido para seus objetivos.</p>
                     </div>
                 </div>
                 <div class="content__item">
                     <span class="content__number">04</span>
                     <div class="content__text">
-                        <h3>Gestão de risco e diversificação</h3>
-                        <p>Aprenda a proteger seu dinheiro e montar uma carteira equilibrada, adequada ao seu perfil.</p>
+                        <h3 data-i18n="content_4_title">Gestão de risco e diversificação</h3>
+                        <p data-i18n="content_4_desc">Aprenda a proteger seu dinheiro e montar uma carteira equilibrada, adequada ao seu perfil.</p>
                     </div>
                 </div>
                 <div class="content__item">
                     <span class="content__number">05</span>
                     <div class="content__text">
-                        <h3>Estratégias para iniciantes</h3>
-                        <p>Estratégias simples, realistas e aplicáveis desde o início da sua jornada como investidor.</p>
+                        <h3 data-i18n="content_5_title">Estratégias para iniciantes</h3>
+                        <p data-i18n="content_5_desc">Estratégias simples, realistas e aplicáveis desde o início da sua jornada como investidor.</p>
                     </div>
                 </div>
                 <div class="content__item">
                     <span class="content__number">06</span>
                     <div class="content__text">
-                        <h3>Materiais de apoio</h3>
-                        <p>Planilhas, calculadoras e ferramentas para acompanhar seus investimentos com mais clareza.</p>
+                        <h3 data-i18n="content_6_title">Materiais de apoio</h3>
+                        <p data-i18n="content_6_desc">Planilhas, calculadoras e ferramentas para acompanhar seus investimentos com mais clareza.</p>
                     </div>
                 </div>
             </div>
@@ -185,19 +188,19 @@
     <!-- Pré-requisitos Section -->
     <section id="prerequisitos" class="objections">
         <div class="container">
-            <h2 class="section__title">Dúvidas comuns antes de começar</h2>
+            <h2 class="section__title" data-i18n="objections_title">Dúvidas comuns antes de começar</h2>
             <div class="objections__list">
                 <div class="objection__item">
-                    <p class="objection__question">"Preciso ter muito dinheiro para começar?"</p>
-                    <p class="objection__answer">→ Não. O curso ensina como iniciar com valores acessíveis.</p>
+                    <p class="objection__question" data-i18n="objection_1_q">"Preciso ter muito dinheiro para começar?"</p>
+                    <p class="objection__answer" data-i18n="objection_1_a">→ Não. O curso ensina como iniciar com valores acessíveis.</p>
                 </div>
                 <div class="objection__item">
-                    <p class="objection__question">"Preciso entender de mercado financeiro?"</p>
-                    <p class="objection__answer">→ Não. O conteúdo foi pensado para quem está começando do zero.</p>
+                    <p class="objection__question" data-i18n="objection_2_q">"Preciso entender de mercado financeiro?"</p>
+                    <p class="objection__answer" data-i18n="objection_2_a">→ Não. O conteúdo foi pensado para quem está começando do zero.</p>
                 </div>
                 <div class="objection__item">
-                    <p class="objection__question">"É muito técnico?"</p>
-                    <p class="objection__answer">→ Não. A linguagem é simples, direta e focada na prática.</p>
+                    <p class="objection__question" data-i18n="objection_3_q">"É muito técnico?"</p>
+                    <p class="objection__answer" data-i18n="objection_3_a">→ Não. A linguagem é simples, direta e focada na prática.</p>
                 </div>
             </div>
         </div>
@@ -206,15 +209,15 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2 class="cta__title">Comece hoje mesmo</h2>
-            <p class="cta__text">
+            <h2 class="cta__title" data-i18n="cta_title">Comece hoje mesmo</h2>
+            <p class="cta__text" data-i18n="cta_text_1">
                 Você não precisa ser especialista para começar.<br>
                 Precisa apenas dar o primeiro passo da forma certa.
             </p>
-            <p class="cta__text">
+            <p class="cta__text" data-i18n="cta_text_2">
                 Comece hoje a construir uma relação mais consciente com o seu dinheiro e dê início à formação do seu patrimônio.
             </p>
-            <button class="btn btn--secondary btn--cta" onclick="scrollToForm()">
+            <button class="btn btn--secondary btn--cta" onclick="scrollToForm()" data-i18n="cta_cta">
                 Garantir minha vaga
             </button>
         </div>
@@ -223,20 +226,21 @@
     <!-- Formulário de Inscrição Section -->
     <section id="inscricao" class="contact">
         <div class="container">
-            <h2 class="section__title">Inscreva-se agora</h2>
-            <p class="section__description">
+            <h2 class="section__title" data-i18n="form_title">Inscreva-se agora</h2>
+            <p class="section__description" data-i18n="form_description">
                 Preencha o formulário abaixo e receba todas as informações do curso diretamente no seu e-mail.
             </p>
             <form id="contactForm" class="contact__form">
                 <!-- Nome -->
                 <div class="form__group">
-                    <label for="name" class="form__label">Nome Completo *</label>
-                    <input 
-                        type="text" 
-                        id="name" 
-                        name="name" 
-                        class="form__input" 
+                    <label for="name" class="form__label" data-i18n="form_label_name">Nome Completo *</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        class="form__input"
                         placeholder="Seu nome completo"
+                        data-i18n-placeholder="form_placeholder_name"
                         required
                     >
                     <span class="form__error" id="nameError"></span>
@@ -244,13 +248,14 @@
 
                 <!-- Email -->
                 <div class="form__group">
-                    <label for="email" class="form__label">E-mail *</label>
-                    <input 
-                        type="email" 
-                        id="email" 
-                        name="email" 
-                        class="form__input" 
+                    <label for="email" class="form__label" data-i18n="form_label_email">E-mail *</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="form__input"
                         placeholder="seu@email.com"
+                        data-i18n-placeholder="form_placeholder_email"
                         required
                     >
                     <span class="form__error" id="emailError"></span>
@@ -258,13 +263,14 @@
 
                 <!-- Telefone -->
                 <div class="form__group">
-                    <label for="phone" class="form__label">Telefone *</label>
-                    <input 
-                        type="tel" 
-                        id="phone" 
-                        name="phone" 
-                        class="form__input" 
+                    <label for="phone" class="form__label" data-i18n="form_label_phone">Telefone *</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        class="form__input"
                         placeholder="(00) 00000-0000"
+                        data-i18n-placeholder="form_placeholder_phone"
                         required
                     >
                     <span class="form__error" id="phoneError"></span>
@@ -272,13 +278,14 @@
 
                 <!-- Mensagem -->
                 <div class="form__group">
-                    <label for="message" class="form__label">Por que você quer aprender a investir? (Opcional)</label>
-                    <textarea 
-                        id="message" 
-                        name="message" 
-                        class="form__input form__textarea" 
+                    <label for="message" class="form__label" data-i18n="form_label_message">Por que você quer aprender a investir? (Opcional)</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        class="form__input form__textarea"
                         rows="4"
                         placeholder="Conte-nos sobre seus objetivos..."
+                        data-i18n-placeholder="form_placeholder_message"
                     ></textarea>
                     <span class="form__error" id="messageError"></span>
                 </div>
@@ -288,10 +295,10 @@
 
                 <!-- Submit Button -->
                 <button type="submit" class="btn btn--primary btn--submit">
-                    <span id="submitText">Confirmar inscrição</span>
+                    <span id="submitText" data-i18n="form_submit">Confirmar inscrição</span>
                     <span id="submitLoader" class="loader" style="display: none;"></span>
                 </button>
-                <p class="form__privacy">
+                <p class="form__privacy" data-i18n="form_privacy">
                     Seus dados estão seguros. Não enviamos spam.
                 </p>
             </form>
@@ -301,9 +308,9 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>Investe Vida — Curso Online de Investimentos</p>
-            <p>Desenvolvido por Codetria — Soluções Digitais & Desenvolvimento Web</p>
-            <p class="footer__legal">
+            <p data-i18n="footer_title">Investe Vida — Curso Online de Investimentos</p>
+            <p data-i18n="footer_credits">Desenvolvido por Codetria — Soluções Digitais & Desenvolvimento Web</p>
+            <p class="footer__legal" data-i18n="footer_legal">
                 Ao se inscrever, você concorda com o uso dos seus dados conforme nossa política de privacidade.
             </p>
         </div>
