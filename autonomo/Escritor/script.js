@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (langToggle) {
         langToggle.addEventListener('click', () => {
             currentLang = currentLang === 'en' ? 'pt' : 'en';
-            langToggle.textContent = currentLang === 'en' ? 'PT' : 'EN';
+            langToggle.textContent = currentLang.toUpperCase();
             updateLanguage();
         });
     }
