@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Escrita profissional para quem precisa comunicar com clareza, propósito e autenticidade">
-    <title>Fiódor Dostoiévski - Escritor Autônomo</title>
+    <meta name="description" content="Professional writing for those who need to communicate with clarity, purpose, and authenticity" data-i18n="meta.description">
+    <title data-i18n="meta.title">Fiódor Dostoiévski - Freelance Writer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
@@ -18,10 +18,11 @@
                 <h2>Fiódor Dostoiévski</h2>
             </div>
             <ul class="nav__menu">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#inicio" data-i18n="nav.home">Home</a></li>
+                <li><a href="#sobre" data-i18n="nav.about">About</a></li>
+                <li><a href="#servicos" data-i18n="nav.services">Services</a></li>
+                <li><a href="#contato" data-i18n="nav.contact">Contact</a></li>
+                <li><button class="lang-toggle" id="langToggle" aria-label="Switch language">PT</button></li>
             </ul>
         </nav>
     </header>
@@ -29,67 +30,67 @@
     <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="hero__content container">
-            <h1 class="hero__title">Transforme ideias em palavras que conectam.</h1>
-            <p class="hero__subtitle">
-                Escrita profissional para quem precisa comunicar com clareza, propósito e autenticidade.
+            <h1 class="hero__title" data-i18n="hero.title">Turn ideas into words that connect.</h1>
+            <p class="hero__subtitle" data-i18n="hero.subtitle">
+                Professional writing for those who need to communicate with clarity, purpose, and authenticity.
             </p>
-            <button class="btn btn--primary btn--cta" onclick="scrollToForm()">
-                Vamos conversar
+            <button class="btn btn--primary btn--cta" data-i18n="hero.cta">
+                Let's talk
             </button>
         </div>
     </section>
 
-    <!-- Sobre / Proposta de Valor Section -->
+    <!-- About Section -->
     <section id="sobre" class="features">
         <div class="container">
-            <h2 class="section__title">Escrita sob medida para projetos reais.</h2>
-            <p class="section__description">
-                Atuo como escritor autônomo desenvolvendo textos claros, objetivos e alinhados à identidade de cada projeto.
-                Do conteúdo institucional à escrita criativa, meu foco é transformar ideias em mensagens que fazem sentido para quem lê.
+            <h2 class="section__title" data-i18n="about.title">Writing tailored for real projects.</h2>
+            <p class="section__description" data-i18n="about.description">
+                I work as a freelance writer developing clear, objective texts aligned with each project's identity.
+                From institutional content to creative writing, my focus is turning ideas into messages that resonate with readers.
             </p>
         </div>
     </section>
 
-    <!-- Serviços Section -->
+    <!-- Services Section -->
     <section id="servicos" class="services">
         <div class="container">
-            <h2 class="section__title">Como posso ajudar</h2>
+            <h2 class="section__title" data-i18n="services.title">How I can help</h2>
             <div class="services__grid">
                 <div class="service__card">
-                    <h3>Escrita de conteúdos</h3>
-                    <p>Textos institucionais, artigos, apresentações e materiais digitais.</p>
+                    <h3 data-i18n="services.content.title">Content Writing</h3>
+                    <p data-i18n="services.content.desc">Institutional texts, articles, presentations, and digital materials.</p>
                 </div>
                 <div class="service__card">
-                    <h3>Revisão e edição</h3>
-                    <p>Ajuste de clareza, tom, coesão e correção gramatical.</p>
+                    <h3 data-i18n="services.revision.title">Review & Editing</h3>
+                    <p data-i18n="services.revision.desc">Clarity, tone, cohesion, and grammar adjustments.</p>
                 </div>
                 <div class="service__card">
-                    <h3>Escrita estratégica</h3>
-                    <p>Conteúdos pensados para informar, engajar ou orientar decisões.</p>
+                    <h3 data-i18n="services.strategic.title">Strategic Writing</h3>
+                    <p data-i18n="services.strategic.desc">Content designed to inform, engage, or guide decisions.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Diferenciais Section -->
+    <!-- Differentiators Section -->
     <section id="diferenciais" class="features">
         <div class="container">
-            <h2 class="section__title">Por que trabalhar comigo</h2>
+            <h2 class="section__title" data-i18n="diff.title">Why work with me</h2>
             <div class="features__grid">
                 <div class="feature__card">
-                    <h3>Comunicação clara e objetiva</h3>
+                    <h3 data-i18n="diff.clarity">Clear and objective communication</h3>
                 </div>
                 <div class="feature__card">
-                    <h3>Escrita adaptada ao seu público</h3>
+                    <h3 data-i18n="diff.audience">Writing adapted to your audience</h3>
                 </div>
                 <div class="feature__card">
-                    <h3>Processo simples e organizado</h3>
+                    <h3 data-i18n="diff.simple">Simple and organized process</h3>
                 </div>
                 <div class="feature__card">
-                    <h3>Entregas dentro do prazo</h3>
+                    <h3 data-i18n="diff.deadlines">On-time delivery</h3>
                 </div>
                 <div class="feature__card">
-                    <h3>Atenção aos detalhes e contexto</h3>
+                    <h3 data-i18n="diff.details">Attention to detail and context</h3>
                 </div>
             </div>
         </div>
@@ -98,9 +99,9 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <p class="cta__text">Cada projeto tem uma voz. Vamos encontrar a sua.</p>
-            <button class="btn btn--secondary btn--cta" onclick="scrollToForm()">
-                Solicitar contato
+            <p class="cta__text" data-i18n="cta.text">Every project has a voice. Let's find yours.</p>
+            <button class="btn btn--secondary btn--cta" data-i18n="cta.button">
+                Request contact
             </button>
         </div>
     </section>
@@ -108,18 +109,19 @@
     <!-- Contact Form Section -->
     <section id="contato" class="contact">
         <div class="container">
-            <h2 class="section__title">Vamos falar sobre seu projeto</h2>
-            <p class="section__description">Conte um pouco sobre sua ideia e entrarei em contato para entender como posso ajudar.</p>
+            <h2 class="section__title" data-i18n="contact.title">Let's talk about your project</h2>
+            <p class="section__description" data-i18n="contact.description">Tell us about your idea and I'll get in touch to understand how I can help.</p>
             <form id="contactForm" class="contact__form">
-                <!-- Nome -->
+                <!-- Name -->
                 <div class="form__group">
-                    <label for="name" class="form__label">Nome Completo *</label>
-                    <input 
-                        type="text" 
-                        id="name" 
-                        name="name" 
-                        class="form__input" 
-                        placeholder="Seu nome completo"
+                    <label for="name" class="form__label" data-i18n="form.name.label">Full Name *</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        class="form__input"
+                        placeholder="Your full name"
+                        data-i18n-placeholder="form.name.placeholder"
                         required
                     >
                     <span class="form__error" id="nameError"></span>
@@ -127,52 +129,55 @@
 
                 <!-- Email -->
                 <div class="form__group">
-                    <label for="email" class="form__label">E-mail *</label>
-                    <input 
-                        type="email" 
-                        id="email" 
-                        name="email" 
-                        class="form__input" 
-                        placeholder="seu@email.com"
+                    <label for="email" class="form__label" data-i18n="form.email.label">Email *</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="form__input"
+                        placeholder="your@email.com"
+                        data-i18n-placeholder="form.email.placeholder"
                         required
                     >
                     <span class="form__error" id="emailError"></span>
                 </div>
 
-                <!-- Telefone -->
+                <!-- Phone -->
                 <div class="form__group">
-                    <label for="phone" class="form__label">Telefone *</label>
-                    <input 
-                        type="tel" 
-                        id="phone" 
-                        name="phone" 
-                        class="form__input" 
+                    <label for="phone" class="form__label" data-i18n="form.phone.label">Phone *</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        class="form__input"
                         placeholder="(00) 00000-0000"
+                        data-i18n-placeholder="form.phone.placeholder"
                         required
                     >
                     <span class="form__error" id="phoneError"></span>
                 </div>
 
-                <!-- Mensagem -->
+                <!-- Message -->
                 <div class="form__group">
-                    <label for="message" class="form__label">Mensagem *</label>
-                    <textarea 
-                        id="message" 
-                        name="message" 
-                        class="form__input form__textarea" 
+                    <label for="message" class="form__label" data-i18n="form.message.label">Message *</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        class="form__input form__textarea"
                         rows="5"
-                        placeholder="Conte-nos sobre seu projeto..."
+                        placeholder="Tell us about your project..."
+                        data-i18n-placeholder="form.message.placeholder"
                         required
                     ></textarea>
                     <span class="form__error" id="messageError"></span>
                 </div>
 
-                <!-- Mensagens de Feedback -->
+                <!-- Feedback Messages -->
                 <div id="formFeedback" class="form__feedback"></div>
 
                 <!-- Submit Button -->
                 <button type="submit" class="btn btn--primary btn--submit">
-                    <span id="submitText">Enviar mensagem</span>
+                    <span id="submitText" data-i18n="form.submit">Send message</span>
                     <span id="submitLoader" class="loader" style="display: none;"></span>
                 </button>
             </form>
@@ -182,8 +187,8 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>Codetria — Soluções Digitais & Desenvolvimento Web</p>
-            <p>Projeto de landing page para profissional autônomo.</p>
+            <p data-i18n="footer.line1">Codetria — Digital Solutions & Web Development</p>
+            <p data-i18n="footer.line2">Landing page project for independent professionals.</p>
         </div>
     </footer>
 

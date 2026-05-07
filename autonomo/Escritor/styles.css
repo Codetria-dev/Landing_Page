@@ -114,6 +114,25 @@ body {
     text-decoration: underline;
 }
 
+.lang-toggle {
+    background: none;
+    border: var(--border-width) var(--border-style) var(--border-color);
+    color: var(--color-text);
+    font-family: var(--font-serif);
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.lang-toggle:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
 /* ============================================
    HERO SECTION
    ============================================ */
