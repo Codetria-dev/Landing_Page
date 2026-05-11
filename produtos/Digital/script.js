@@ -2,13 +2,76 @@
  * ============================================
  * LANDING PAGE - SCRIPT PRINCIPAL
  * ============================================
- * 
  * Funcionalidades:
+ * - Navegação sticky com shadow on scroll
+ * - Menu mobile toggle
+ * - FAQ accordion
  * - Validação de formulário em tempo real
  * - Envio via fetch API
- * - Feedback visual de sucesso/erro
  * - Máscara de telefone
  */
+
+// ============================================
+// STICKY NAV SCROLL EFFECT
+// ============================================
+const nav = document.querySelector('.sticky-nav');
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+function handleNavScroll() {
+    if (window.scrollY > 10) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+}
+
+window.addEventListener('scroll', handleNavScroll, { passive: true });
+
+// ============================================
+// MOBILE NAV TOGGLE
+// ============================================
+navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('open');
+    navLinks.classList.toggle('open');
+});
+
+// Fecha o menu ao clicar em um link
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+    });
+});
+
+// ============================================
+// FAQ ACCORDION
+// ============================================
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+
+    question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+
+        // Fecha todos
+        faqItems.forEach(other => {
+            other.classList.remove('active');
+            other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // Abre o clicado se estava fechado
+        if (!isActive) {
+            item.classList.add('active');
+            question.setAttribute('aria-expanded', 'true');
+        }
+    });
+});
+
+// ============================================
+// FORMULÁRIO
+// ============================================
 
 // Seletores DOM
 const form = document.getElementById('downloadForm');
@@ -54,9 +117,8 @@ function validateEmail(email) {
  */
 function validatePhone(phone) {
     if (!phone || phone.trim() === '') {
-        return null; // Telefone é opcional
+        return null;
     }
-    // Remove caracteres não numéricos
     const phoneNumbers = phone.replace(/\D/g, '');
     if (phoneNumbers.length < 10 || phoneNumbers.length > 11) {
         return 'Telefone inválido (deve ter 10 ou 11 dígitos)';
@@ -68,10 +130,7 @@ function validatePhone(phone) {
  * Máscara de telefone brasileiro
  */
 function maskPhone(value) {
-    // Remove tudo que não é número
     const numbers = value.replace(/\D/g, '');
-    
-    // Aplica máscara conforme o tamanho
     if (numbers.length <= 2) {
         return numbers ? `(${numbers}` : '';
     } else if (numbers.length <= 7) {
@@ -123,10 +182,7 @@ emailInput.addEventListener('blur', () => {
 });
 
 phoneInput.addEventListener('input', (e) => {
-    // Aplica máscara
     e.target.value = maskPhone(e.target.value);
-    
-    // Valida se necessário
     const error = validatePhone(e.target.value);
     if (error) {
         showError(phoneInput, phoneError, error);
@@ -165,11 +221,9 @@ emailInput.addEventListener('input', () => {
 function showMessage(message, type = 'success') {
     formMessage.textContent = message;
     formMessage.className = `form-message ${type} show`;
-    
-    // Scroll suave até a mensagem
+
     formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    
-    // Remove mensagem após 5 segundos (apenas para sucesso)
+
     if (type === 'success') {
         setTimeout(() => {
             formMessage.classList.remove('show');
@@ -190,28 +244,25 @@ function clearMessage() {
  */
 function validateForm() {
     let isValid = true;
-    
-    // Valida nome
+
     const nameErrorMsg = validateName(nameInput.value);
     if (nameErrorMsg) {
         showError(nameInput, nameError, nameErrorMsg);
         isValid = false;
     }
-    
-    // Valida e-mail
+
     const emailErrorMsg = validateEmail(emailInput.value);
     if (emailErrorMsg) {
         showError(emailInput, emailError, emailErrorMsg);
         isValid = false;
     }
-    
-    // Valida telefone (opcional)
+
     const phoneErrorMsg = validatePhone(phoneInput.value);
     if (phoneErrorMsg) {
         showError(phoneInput, phoneError, phoneErrorMsg);
         isValid = false;
     }
-    
+
     return isValid;
 }
 
@@ -235,7 +286,7 @@ function setLoading(loading) {
  */
 async function submitForm(formData) {
     try {
-        // IMPORTANTE: Substitua esta URL pela URL real do seu endpoint
+        // IMPORTANTE: Substitua pela URL real do endpoint
         const response = await fetch('https://api.exemplo.com/ebook/download', {
             method: 'POST',
             headers: {
@@ -252,9 +303,9 @@ async function submitForm(formData) {
         return { success: true, data };
     } catch (error) {
         console.error('Erro ao enviar formulário:', error);
-        return { 
-            success: false, 
-            error: error.message || 'Erro ao processar solicitação. Tente novamente.' 
+        return {
+            success: false,
+            error: error.message || 'Erro ao processar solicitação. Tente novamente.'
         };
     }
 }
@@ -264,48 +315,36 @@ async function submitForm(formData) {
  */
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
-    // Limpa mensagens anteriores
+
     clearMessage();
-    
-    // Valida formulário
+
     if (!validateForm()) {
         showMessage('Por favor, corrija os erros no formulário.', 'error');
         return;
     }
-    
-    // Prepara dados do formulário
+
     const formData = {
         name: nameInput.value.trim(),
         email: emailInput.value.trim(),
         phone: phoneInput.value.trim() || null,
         timestamp: new Date().toISOString(),
     };
-    
-    // Ativa loading
+
     setLoading(true);
-    
-    // Envia formulário
+
     const result = await submitForm(formData);
-    
-    // Desativa loading
+
     setLoading(false);
-    
-    // Processa resultado
+
     if (result.success) {
-        // Sucesso!
         showMessage('E-book enviado com sucesso! Verifique seu e-mail.', 'success');
-        
-        // Limpa formulário após 2 segundos
         setTimeout(() => {
             form.reset();
-            // Limpa todos os erros visuais
             clearError(nameInput, nameError);
             clearError(emailInput, emailError);
             clearError(phoneInput, phoneError);
         }, 2000);
     } else {
-        // Erro
         showMessage(
             result.error || 'Erro ao enviar formulário. Por favor, tente novamente.',
             'error'
@@ -318,7 +357,5 @@ form.addEventListener('submit', async (e) => {
  */
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Landing page carregada com sucesso!');
-    
-    // Foco automático no primeiro campo
     nameInput.focus();
 });
