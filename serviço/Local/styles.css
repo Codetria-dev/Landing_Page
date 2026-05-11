@@ -300,13 +300,16 @@ body {
    ============================================ */
 
 .hero {
-    background: linear-gradient(135deg, #F5DEB3 0%, #E6D3A3 25%, #D4C4A0 50%, #C4B59A 75%, #B8A082 100%);
-    color: var(--text-dark);
-    padding: 60px 0 120px;
+    background-image: linear-gradient(135deg, rgba(62, 39, 35, 0.6), rgba(107, 68, 35, 0.5)), url('assets/hero.jpg');
+    background-size: cover;
+    background-position: center 35%;
+    background-repeat: no-repeat;
+    color: var(--white);
+    padding: 80px 0 120px;
     text-align: center;
     position: relative;
     overflow: hidden;
-    min-height: 400px;
+    min-height: 550px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -353,17 +356,17 @@ body {
     font-size: 4.5rem;
     margin-bottom: 20px;
     font-weight: 600;
-    color: var(--text-dark);
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+    color: var(--white);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
     font-size: 2rem;
     margin-bottom: 40px;
-    color: var(--text-light);
+    color: var(--white);
     font-weight: 600;
     animation: fadeInUp 1s ease-out 0.4s both;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes fadeInUp {
@@ -1015,7 +1018,8 @@ body {
 
     .hero {
         padding: 30px 0 100px;
-        min-height: 200px;
+        min-height: 300px;
+        background-position: center 30%;
     }
 
     .hero-title {
