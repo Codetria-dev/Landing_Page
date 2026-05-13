@@ -8,11 +8,11 @@
 }
 
 :root {
-    --primary-color: #1e3a5f;
-    --primary-dark: #1a365d;
-    --secondary-color: #2c5282;
-    --navy-blue: #0f172a;
-    --navy-blue-light: #1e293b;
+    --primary-color: #0f766e;
+    --primary-dark: #0d5e57;
+    --secondary-color: #14b8a6;
+    --navy-blue: #0c0a09;
+    --navy-blue-light: #1c1917;
     --text-dark: #0f172a;
     --text-light: #64748b;
     --text-muted: #94a3b8;
@@ -374,7 +374,7 @@ a {
 
 .book-spine {
     width: 18px;
-    background: linear-gradient(180deg, #152d4a 0%, #1e3a5f 100%);
+    background: linear-gradient(180deg, #0d5e57 0%, #0f766e 100%);
     border-radius: 4px 0 0 4px;
     position: relative;
 }
@@ -393,7 +393,7 @@ a {
 
 .book-cover {
     flex: 1;
-    background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 50%, #3b6ea8 100%);
+    background: linear-gradient(135deg, #0f766e 0%, #14b8a6 50%, #2dd4bf 100%);
     border-radius: 0 8px 8px 0;
     padding: 2.5rem 2rem;
     position: relative;
