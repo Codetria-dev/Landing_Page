@@ -590,15 +590,15 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('a[href^="#"]');
-    
+
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            
+
             if (href !== '#' && href !== '') {
                 const targetId = href.substring(1);
                 const targetElement = document.getElementById(targetId);
-                
+
                 if (targetElement) {
                     e.preventDefault();
                     targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -607,3 +607,138 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// ============================================
+// SCROLL REVEAL - INTERSECTION OBSERVER
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    // Aplica classes de delay com base no atributo data-reveal-delay
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+        const delay = el.getAttribute('data-reveal-delay');
+        if (delay) {
+            el.classList.add(`reveal-delay-${delay}`);
+        }
+        el.classList.add('reveal');
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -60px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+            el.classList.add('visible');
+        } else {
+            observer.observe(el);
+        }
+    });
+});
+
+// ============================================
+// HEADER SCROLL EFFECT
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('.header');
+    if (!header) return;
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                header.classList.toggle('scrolled', window.scrollY > 60);
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+});
+
+// ============================================
+// SCROLL SPY - NAV ACTIVE STATE
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav__menu a');
+
+    if (sections.length === 0 || navLinks.length === 0) return;
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        let currentOffset = 0;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 200;
+            if (window.scrollY >= sectionTop) {
+                const id = section.getAttribute('id');
+                if (sectionTop > currentOffset) {
+                    current = id;
+                    currentOffset = sectionTop;
+                }
+            }
+        });
+
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            link.classList.toggle('active', href === `#${current}`);
+        });
+    }, { passive: true });
+});
+
+// ============================================
+// COUNTER ANIMATION - STATS
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    const counters = document.querySelectorAll('.stat__number');
+    if (counters.length === 0) return;
+
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.getAttribute('data-target'));
+                const suffix = el.getAttribute('data-suffix') || '';
+                if (!isNaN(target)) {
+                    animateCounter(el, target, suffix);
+                }
+                counterObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(el => counterObserver.observe(el));
+});
+
+function animateCounter(element, target, suffix) {
+    const duration = 2000;
+    const startTime = performance.now();
+
+    function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(eased * target);
+
+        if (target >= 1000) {
+            element.textContent = current.toLocaleString('pt-BR') + suffix;
+        } else {
+            element.textContent = current + suffix;
+        }
+
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        } else {
+            element.textContent = target.toLocaleString('pt-BR') + suffix;
+        }
+    }
+
+    requestAnimationFrame(update);
+}
