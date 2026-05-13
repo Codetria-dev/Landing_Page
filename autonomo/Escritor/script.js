@@ -4,12 +4,17 @@
  * ============================================
  *
  * Funcionalidades:
- * - Sistema bilíngue (EN/PT)
+ * - Sistema bilíngue (EN/PT) com toggle
+ * - Animações de scroll (Intersection Observer)
+ * - Scroll spy: destaca link ativo na navegação
+ * - Sombra no header ao scrollar
+ * - Hamburger menu para mobile
+ * - Botão scroll-to-top
+ * - Scroll suave com offset do header
  * - Validação de formulário em tempo real
  * - Máscara de telefone
  * - Envio de formulário via fetch API
  * - Feedback visual de sucesso/erro
- * - Scroll suave para seções
  */
 
 // ============================================
@@ -254,12 +259,18 @@ function updateLanguage() {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('.header');
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.querySelector('.nav__menu');
+    const scrollTopBtn = document.getElementById('scrollTop');
+    const headerHeight = 68;
+
     // Inicializa o idioma padrão
     updateLanguage();
     // Limpa erros do formulário
     clearAllErrors();
 
-    // Toggle de idioma
+    // ===== Toggle de idioma =====
     const langToggle = document.getElementById('langToggle');
     if (langToggle) {
         langToggle.addEventListener('click', () => {
@@ -269,26 +280,129 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Adiciona smooth scroll para links de navegação
+    // ===== Hamburger menu (mobile) =====
+    if (navToggle) {
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('is-active');
+            navMenu?.classList.toggle('is-active');
+        });
+
+        // Fecha o menu ao clicar em um link
+        if (navMenu) {
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navToggle.classList.remove('is-active');
+                    navMenu.classList.remove('is-active');
+                });
+            });
+        }
+    }
+
+    // ===== Scroll spy: destaca link ativo na navegação =====
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav__menu a[href^="#"]');
+
+    function updateActiveNav() {
+        let current = '';
+        const scrollY = window.scrollY + headerHeight + 20;
+
+        sections.forEach(section => {
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
+            if (scrollY >= top && scrollY < top + height) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('is-active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('is-active');
+            }
+        });
+    }
+
+    // ===== Header shadow on scroll =====
+    function updateHeaderShadow() {
+        if (window.scrollY > 50) {
+            header?.classList.add('is-scrolled');
+        } else {
+            header?.classList.remove('is-scrolled');
+        }
+    }
+
+    // ===== Scroll-to-top button =====
+    function updateScrollTopBtn() {
+        if (!scrollTopBtn) return;
+        if (window.scrollY > 500) {
+            scrollTopBtn.classList.add('is-visible');
+        } else {
+            scrollTopBtn.classList.remove('is-visible');
+        }
+    }
+
+    scrollTopBtn?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ===== Smooth scroll com offset do header =====
+    function scrollToSection(target) {
+        if (!target) return;
+        const top = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+        window.scrollTo({ top, behavior: 'smooth' });
+    }
+
+    // Nav links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            scrollToSection(target);
         });
     });
 
-    // Adiciona smooth scroll aos botões CTA
+    // CTA buttons
     document.querySelectorAll('.btn--cta').forEach(btn => {
         btn.addEventListener('click', () => {
             const contactSection = document.getElementById('contato');
-            if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            scrollToSection(contactSection);
         });
     });
+
+    // ===== Intersection Observer: animações de scroll =====
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
+
+    // ===== Attach scroll listeners =====
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                updateActiveNav();
+                updateHeaderShadow();
+                updateScrollTopBtn();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    // Estado inicial
+    updateActiveNav();
+    updateHeaderShadow();
+    updateScrollTopBtn();
 });
 
 // ============================================

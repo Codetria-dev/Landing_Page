@@ -17,6 +17,11 @@
             <div class="nav__logo">
                 <h2>Fiódor Dostoiévski</h2>
             </div>
+            <button class="nav__toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav__menu">
                 <li><a href="#inicio" data-i18n="nav.home">Home</a></li>
                 <li><a href="#sobre" data-i18n="nav.about">About</a></li>
@@ -41,7 +46,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="sobre" class="features">
+    <section id="sobre" class="features animate-on-scroll">
         <div class="container">
             <h2 class="section__title" data-i18n="about.title">Writing tailored for real projects.</h2>
             <p class="section__description" data-i18n="about.description">
@@ -52,7 +57,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="servicos" class="services">
+    <section id="servicos" class="services animate-on-scroll">
         <div class="container">
             <h2 class="section__title" data-i18n="services.title">How I can help</h2>
             <div class="services__grid">
@@ -73,7 +78,7 @@
     </section>
 
     <!-- Differentiators Section -->
-    <section id="diferenciais" class="features">
+    <section id="diferenciais" class="features animate-on-scroll">
         <div class="container">
             <h2 class="section__title" data-i18n="diff.title">Why work with me</h2>
             <div class="features__grid">
@@ -97,7 +102,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="cta-section animate-on-scroll">
         <div class="container">
             <p class="cta__text" data-i18n="cta.text">Every project has a voice. Let's find yours.</p>
             <button class="btn btn--secondary btn--cta" data-i18n="cta.button">
@@ -107,7 +112,7 @@
     </section>
 
     <!-- Contact Form Section -->
-    <section id="contato" class="contact">
+    <section id="contato" class="contact animate-on-scroll">
         <div class="container">
             <h2 class="section__title" data-i18n="contact.title">Let's talk about your project</h2>
             <p class="section__description" data-i18n="contact.description">Tell us about your idea and I'll get in touch to understand how I can help.</p>
@@ -192,6 +197,7 @@
         </div>
     </footer>
 
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
     <script src="script.js"></script>
 </body>
 </html>
